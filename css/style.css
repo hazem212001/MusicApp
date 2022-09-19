@@ -1,0 +1,278 @@
+:root{
+
+    --bg01: linear-gradient(180deg , #22262A 0% , #181A1D 100%);
+    --bg02: linear-gradient(135deg , #2F3439, #1D1F23);
+    --bg03: linear-gradient(135deg , #2C3136, #1D2023);
+    --bg05: linear-gradient(135deg , #d1d1d1, #000000);
+    --bg04: #040404;
+    --border01:#22262A;
+    --border02:#1A1D21;
+    --border03:#6e6e6e;
+
+/******* Box-Shadow *******/
+
+    --box-shadow01:
+    6px 6px 10px #151618,
+    -6px -6px 10px #2C3136,
+    inset 2px 2px 6px #33353B,
+    inset -3px -3px 6px #151618;
+
+    --box-shadow02:
+    -6px -6px 10px #151618,
+    6px 6px 10px #2C3136,
+    inset 2px 2px 6px #33353B,
+    inset -3px -3px 6px #151618;
+
+    --box-shadow03:
+    6px 6px 12px #151618,
+    -6px -6px 12px #2C3136;
+
+    --box-shadow04:
+    inset 2px 2px 3px -2px rgba(167,169,171,0.322),
+    inset 0px -1px 1px 0px #4A4C4E;
+
+    --box-shadow05:
+    8px 8px 12px #151618,
+    -10px -10px 12px #222529,
+    inset -4px -4px 8px #33353B,
+    inset 4px 4px 8px #151618;
+
+    --box-shadow06:
+    10px 10px 12px #151618,
+    -10px -10px 12px #222529,
+    inset 4px 4px 8px #33353B,
+    inset -4px -4px 8px #151618;
+
+    --box-shadow07:
+    10px 10px 12px #151618,
+    -10px -10px 12px #222529,
+    inset -4px -4px 8px #33353B,
+    inset 4px 4px 8px #151618;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--bg05);
+    height: 100vh;
+}
+
+.wrapper{
+    max-width: 900px;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header,
+.song-timer,
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header .hdbtn{
+    border: 2px solid var(--border01);
+    background: var(--bg02);
+    box-shadow: 10px 10px 10px #5e5e5e;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    color: #a7a7a7;
+    font-size: 22px;
+    border-radius: 50%;
+    transition: all 0.6s ease;
+}
+
+.hdbtn:active{
+    box-shadow: var(--box-shadow02);
+
+}
+
+header h3{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #000000;
+}
+
+.player{
+    margin-top: 2rem;
+}
+
+.img-area{
+    margin-top: -30px;
+}
+
+img{
+    width: 18rem;
+    height: 18rem;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    border:10px solid var(--border03);
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px #040404;
+}
+
+.name{
+    color: #c9c9c9;
+    font-size: 14px;
+    text-transform: capitalize;
+    margin-top: -10px;
+    padding: 1px 0px 20px 0px;
+}
+
+.audioC{
+    margin: 28px 0px 28px 0px ;
+}
+
+.song-timer{
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.song-timer span{
+    font-size: 12px;
+    color: #000000;
+    user-select: none;
+    font-weight: 800;
+}
+
+.progress-area{
+    height: 7px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 50px;
+    background: var(--bg04);
+    box-shadow: var(--box-shadow04);
+    cursor: pointer;
+}
+
+.progress-area .progress-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg,
+    #BF2311 0%,
+    #E1530A 80%);
+    box-shadow: var(--box-shadow04);
+}
+
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    background: var(--bg04);
+    border-radius: 50%;
+    top: 50%;
+    right: -14px;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.progress-bar::after{
+    content: "";
+    position: absolute;
+    background: #E1530A;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.controls{
+    margin: 5px 8px 5px 8px;
+    margin-top: -10px;
+}
+
+.btnC{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid var(--border02);
+    transition: all 0.2s ease;
+    background: #040404;
+}
+
+.btnC:active{
+    box-shadow: 10px 10px 10px #040404;
+}
+
+.controls i{
+    font-size: 20px;
+    user-select: none;
+    color: #A7A9A7;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls .play-pause{
+    width: 80px;
+    height: 80px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.play-pause i{
+    text-align: center;
+    color: #fff;
+}
+
+.play-pause{
+    border: 3px solid #CE4B0E;
+    background: linear-gradient(135deg,
+    #BD2210,
+    #E5550B);
+    box-shadow: 
+    10px 10px 12px #151618,
+    -10px -10px 12px #222529,
+    inset 4px 4px 8px #E5550B,
+    inset -4px -4px 8px #BD2210;
+}
+
+.play-pause:active{
+    box-shadow:
+    inset -10px -10px 8px #E5550B,
+    inset 10px 10px 8px #BD2210;
+}
+
+.rotate{
+    animation: rotation 8s infinite linear;
+    transform-origin: center;
+}
+
+@keyframes rotation{
+    form
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(359deg);
+    }
+}
